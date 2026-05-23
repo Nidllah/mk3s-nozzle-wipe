@@ -165,7 +165,7 @@ This is what my PRINT_START looks like (drop in replacement if you are using **c
 | What | Change |
 |---|---|
 | Cooldown | Parts fan cools nozzle to 170°C before shutting down |
-
+The printer already retracts 3-4mm when print end, this helps cool the nozzle faster and reduce oozing.
 
 This is how my PRINT_END look like:
 
