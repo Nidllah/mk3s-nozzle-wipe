@@ -21,7 +21,7 @@ Gives your Prusa MK3S+ a more modern startup and shutdown routine:
 **You need to print and install the physical nozzle wiper mod before using this.**
 
 👉 [Nozzle Wiper for MK3S / MK3.5 / MK3.9 / MK4S by Apheli0n_265140 on Printables](https://www.printables.com/model/1394873-nozzle-wiper-mk3s-mk35-mk39-mk4s)
-    He has instructions on how to add the instructions in your start gcode incase you run it stock and not klipper.
+He has instructions on how to add the instructions in your start gcode incase you run it stock and not klipper.
 
 ---
 
