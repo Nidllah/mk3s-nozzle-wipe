@@ -170,22 +170,21 @@ The printer already retracts 3-4mm when print end, this helps cool the nozzle fa
 
 This is how my PRINT_END look like:
 
-    # Print End Added cooldown
-    [gcode_macro PRINT_END]
-    gcode:
-    #SET_SKEW CLEAR=1
-    M83 ; extruder relative mode
-    G1 E-4 ; retract filament a bit for minimizing ooze
-    _TOOLHEAD_PARK_PAUSE_CANCEL    ; Park
-    G90 ; absolute positioning
-    G0 Z{[printer.toolhead.position.z, 100]|max} F300 ; park at least 100mm off the bed
-    M117 Cooling down...
-    M106 S255                        ; Parts fan on full to help cool nozzle
-    TEMPERATURE_WAIT SENSOR=extruder MAXIMUM=170  ; Wait until nozzle is at 170C
-    M84 X Y E    ; Disable steppers
-    TURN_OFF_HEATERS    ; Disable heaters
-    M106 S0     ; Disable fans
-    BED_MESH_CLEAR    ; Clear bed mesh
+       [gcode_macro PRINT_END]
+        gcode:
+        #SET_SKEW CLEAR=1
+        M83 ; extruder relative mode
+        TURN_OFF_HEATERS    ; Disable heaters
+        G1 E-4 ; retract filament a bit for minimizing ooze
+        M117 Cooling down...
+        M106 S255   ; Parts fan on full to help cool nozzle
+        _TOOLHEAD_PARK_PAUSE_CANCEL    ; Park
+        G90 ; absolute positioning
+        G0 Z{[printer.toolhead.position.z, 50]|max} F300 ; park at least 50mm off the bed                      
+        TEMPERATURE_WAIT SENSOR=extruder MAXIMUM=170  ; Wait until nozzle is at 170C
+        M84 X Y E    ; Disable steppers
+        M106 S0     ; Disable fans
+        BED_MESH_CLEAR    ; Clear bed mesh
 
 
 ---
