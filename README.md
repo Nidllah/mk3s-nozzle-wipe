@@ -30,7 +30,7 @@ He has instructions on how to add the instructions in your start gcode incase yo
 Klipper MK3S+ config and settings by **charminULTRA**:
 👉 https://github.com/charminULTRA/Klipper-Input-Shaping-MK3S-Upgrade
 
-These are modified versions of the `PRINT_START` and `PRINT_END` macros from that config. Replace the originals with the files here.
+These are modified versions of the `PRINT_START` and `PRINT_END` macros from that config. Drop in replacement.
 
 ---
 
