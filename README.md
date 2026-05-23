@@ -29,8 +29,8 @@ Added  PRINT_START
 # - Extruder fan turned off as soon as cal temp is reached
 # =================================================================================
 
-[gcode_macro PRINT_START]
-gcode:
+    [gcode_macro PRINT_START]
+    gcode:
     {% set BED_TEMP = params.BED_TEMP|default(60)|float %}
     {% set BED_CAL_TEMP = params.BED_CAL_TEMP|default(60)|float %}
     {% set EXTRUDER_TEMP = params.EXTRUDER_TEMP|default(215)|float %}
@@ -140,7 +140,7 @@ gcode:
     #SKEW_PROFILE LOAD=CaliFlower
 
     
-#-----------------------------------------------------------------------------------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -148,10 +148,10 @@ gcode:
 
 
 
-Changed Print_END:
-Added faster cooldown to minimize oozing to PRINT_END:
-[gcode_macro PRINT_END]
-gcode:
+    Changed Print_END:
+    Added faster cooldown to minimize oozing to PRINT_END:
+    [gcode_macro PRINT_END]
+    gcode:
     #SET_SKEW CLEAR=1
     M83                                          ; Extruder relative mode
     G1 E-4                                       ; Retract filament to minimize ooze
