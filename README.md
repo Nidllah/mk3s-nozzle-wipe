@@ -69,7 +69,7 @@ This is what my PRINT_START looks like (drop in replacement if you are using **c
     G28                              ; Home all axes
     G90                              ; Absolute positioning
 
-    ; --- WAIT FOR NOZZLE CLEANING TEMP --- [ADDED]
+      ; --- WAIT FOR NOZZLE CLEANING TEMP --- [ADDED]
     ; Wait for nozzle to reach 250C before cleaning
     M117 Heating for cleaning...
     TEMPERATURE_WAIT SENSOR=extruder MINIMUM=248 MAXIMUM=255
@@ -80,41 +80,41 @@ This is what my PRINT_START looks like (drop in replacement if you are using **c
     M117 Cleaning nozzle...
     G1 Z15 F4000
     G1 X252 Y-4 F8000                ; Move to cleaning position
-    G1 Z5                            ; Lower to bottom level
+    G1 Z6                            ; Lower to bottom level
     G1 Y40 F6000                     ; Forward - bottom
-    G1 Z7
+    G1 Z8
     G1 X252 Y-4 F6000                ; Back - top
-    G1 Z5
+    G1 Z6
     G1 Y40 F6000
-    G1 Z7
-    G1 X253 Y-4 F6000
-    G1 Z5
-    G1 Y40 F6000
-    G1 Z7
-    G1 X253 Y-4 F6000
-    G1 Z5
-    G1 Y40 F6000
-    G1 Z7
-    G1 X254 Y-4 F6000
-    G1 Z5
-    G1 Y40 F6000
-    G1 Z7
-    ; [ADDED] Start cooling mid-wipe to save time
+     ; [ADDED] Start cooling mid-wipe to save time
     M104 S{EXTRUDER_CAL_TEMP}        ; Start cooling nozzle immediately
     M106 S255                        ; Parts fan on full to help cool
     G1 E-3 F1800                     ; Retract 3mm to stop oozing
-    G1 X254 Y-4 F6000
-    G1 Z5
-    G1 Y40 F6000
-    G1 Z7
+    G1 Z8
     G1 X253 Y-4 F6000
-    G1 Z5
+    G1 Z6
     G1 Y40 F6000
-    G1 Z7
+    G1 Z8
+    G1 X253 Y-4 F6000
+    G1 Z6
+    G1 Y40 F6000
+    G1 Z8
+    G1 X254 Y-4 F6000
+    G1 Z6
+    G1 Y40 F6000
+    G1 Z8
+    G1 X254 Y-4 F6000
+    G1 Z6
+    G1 Y40 F6000
+    G1 Z8
+    G1 X253 Y-4 F6000
+    G1 Z6
+    G1 Y40 F6000
+    G1 Z8
     G1 X252 Y-4 F6000
-    G1 Z5
+    G1 Z6
     G1 Y40 F6000
-    G1 Z7
+    G1 Z8
     G1 X253 Y-4 F6000
 
     ; --- LEAVE CLEANING POSITION --- [ADDED]
